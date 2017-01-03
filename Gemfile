@@ -45,3 +45,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'mongoid', '~> 5.0.1'
+gem 'httparty'
+gem 'responders', '~> 2.1', '>= 2.1.1'
+gem 'devise', '~> 3.5', '>= 3.5.3'
