@@ -1,10 +1,14 @@
-class AccountsController < PagesController
+class AccountsController < ApplicationController
+
+  before_action :authenticate_user!
+  before_action :user_signed_in?
+
   before_action :set_account, only: [:show, :edit, :update, :destroy]
 
   # GET /accounts
   # GET /accounts.json
   def index
-    @accounts = current_user.accounts.all
+    @accounts = User.first.accounts.all
   end
 
   # GET /accounts/1

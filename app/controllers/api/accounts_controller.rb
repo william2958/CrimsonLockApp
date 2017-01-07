@@ -3,7 +3,7 @@ module Api
 		before_action :set_account, only: [:show, :edit, :update, :destroy]
 
 		def index
-			respond_with Account.all
+			respond_with User.first.accounts.all
 		end
 
 		def show 
