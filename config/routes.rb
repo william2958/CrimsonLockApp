@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  #get 'pages/index'
+  #get 'accounts/index'
   root to: 'accounts#index'
 
   resources :accounts
   namespace :api, defaults: {format:'json'} do
     resources :accounts
+    mount_devise_token_auth_for 'User', at: 'auth'
   end
 
-  mount_devise_token_auth_for 'User', at: 'auth'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

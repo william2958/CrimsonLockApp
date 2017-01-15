@@ -1,8 +1,6 @@
-class AccountsController < ApplicationController
-
+class AccountsController < PagesController
   before_action :authenticate_user!
   before_action :user_signed_in?
-
   before_action :set_account, only: [:show, :edit, :update, :destroy]
 
   # GET /accounts
